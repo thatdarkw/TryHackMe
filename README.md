@@ -1,6 +1,5 @@
 # Room name = Bounty Hacker.
 # URL = https://tryhackme.com/room/cowboyhacker
-
 # This is a walkthrough for tryhackme's Bounty Hacker room.
 
 # Enumeration:-
