@@ -21,3 +21,18 @@ Connect to it. Type,
 ```bash
 ftp <ip>
 ```
+
+Now, let's view files using ls command.
+There are two files named as locks.txt and task.txt.
+Get them to your pc and see whats inside.
+First one has a username and other has list of words which is a password list for bruteforcing.
+
+# Gaining access:-
+
+Since we have username and password list, let's do a bruteforcing attack using Hydra.
+Hydra is a tool we are going to use to do bruteforcing.
+
+Type:-
+```bash
+hydra -l <username> -P <password_list> -t 1 <ip>
+```
