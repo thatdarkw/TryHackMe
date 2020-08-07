@@ -32,5 +32,5 @@ Hydra is a tool we are going to use to do bruteforcing.
 
 Type:-
 ```bash
-hydra -l <username> -P <password_list> -t 1 <ip>
+hydra -l <username> -P <password_list> -t 1 <ip> ssh
 ```
