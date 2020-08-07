@@ -1,5 +1,5 @@
 # This is a walkthrough for tryhackme's Bounty Hacker room.
-# URL = https://tryhackme.com/room/cowboyhacker
+URL = https://tryhackme.com/room/cowboyhacker
 
 # Enumeration:-
 
