@@ -9,3 +9,14 @@ Lets run quick nmap scan.
 ```bash
 sudo nmap <ip>
 ```
+This returned 3 open ports.
+port      |service
+----------|----------
+21        |FTP
+22        |SSH
+80        |Web server
+
+Let's enumerate ftp port first.
+Connect to it like ```bash
+ftp <ip>
+```
