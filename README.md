@@ -17,6 +17,7 @@ port      |service
 80        |Web server
 
 Let's enumerate ftp port first.
-Connect to it like ```bash
+Connect to it. Type,
+```bash
 ftp <ip>
 ```
