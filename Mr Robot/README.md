@@ -15,7 +15,8 @@ port      |service
 443       |Web server (HTTPS)
 
 Let's enumerate port 80.
-Hmm... Interesting page. Let's check /robots.txt.
+Hmm... Interesting page.
+Let's check /robots.txt.
 
 ![robots](images/robots.png)
 
