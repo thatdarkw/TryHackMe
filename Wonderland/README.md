@@ -40,7 +40,7 @@ Woah... We are alice user now. But still a long road remains....
 ```
 sudo -l
 ```
-![sudo -l](/images/sudo -l.png)
+![sudo -l](/images/sudo_l.png)
 
 Above command reveals /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py can be run as rabbit user.
 Let's read walrus_and_the_carpenter.py . We don't have write privilege but inside this file is an import statement which imports random.
