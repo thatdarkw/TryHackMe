@@ -17,7 +17,9 @@ port      |service
 Let's enumerate port 80.
 Nothing much on home page except some picture and words. Picture is from /img so let's check it and download them to check for steganography.
 Using steghide on white_rabbit_1.jpg with no pass extracts hint.txt file which says follow the r a b b i t.
+
 ![steghide](images/steghide.png)
+
 Interesting....
 
 Let's directory burst cause no idea what this hint means.
@@ -26,7 +28,7 @@ Let's directory burst cause no idea what this hint means.
 dirsearch -u http://10.10.163.161/ -e php,txt,html -x 400,401,403 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -r
 ```
 This returns 3 interesting directories which are /r/ , /poem/, and /img/. Already checked /img/ so let's check this two.
-/poem contains a nice poes. Give it a read!
+/poem contains a nice poem. Give it a read!
 
 /r contains some message.
 I used -r so its gonna directory burst every directory it find with all dictionary words but I'm gonna stop it after 10% done cause that's enough.
@@ -63,12 +65,14 @@ Create date file which will contain reverse shell. Make sure to give it shebang 
 
 Congrats!!! You are now hatter user. Use the creds and then ssh directly as hatter to get stable access.
 If you ran linpeas before you may notice we can now get direct root from here. If not then go ahead and run linpeas which will highlight 2 capabilities having set as setuid. Why I didn't say this before? Cause ofcourse, only hatter can execute them.
+
 ![linpeas](images/capabilities.png)
 
 Grab the capability exploit for perl from gtfobins and use it to get root.
 ```
 perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'
 ```
-![perl_capability](images/perl_capability)
+
+![perl_capability](images/perl_capability.png)
 
 Congrats, root is owned now.
