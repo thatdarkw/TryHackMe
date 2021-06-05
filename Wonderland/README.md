@@ -33,7 +33,9 @@ This returns 3 interesting directories which are /r/ , /poem/, and /img/. Alread
 /r contains some message.
 I used -r so its gonna directory burst every directory it find with all dictionary words but I'm gonna stop it after 10% done cause that's enough.
 No interesting directory after /poem/ but on /r/ we found another directory which is /r/a/. It contains some conversation type message. Again after some time I stop the scan and tell dirsearch to start on /r/a/.
-Now, dirsearch founds /r/a/b/... Interesting huh? Remember the hint. Go on like this or you already know from the hint now. I dirsearch all the way till end after then I noticed r a b b i t hint actually suggests to go to the /r/a/b/b/i/t/ directory.
+Now, dirsearch founds /r/a/b/...
+
+Interesting huh? Remember the hint. Go on like this or you already know from the hint now. I dirsearch all the way till end after then I noticed r a b b i t hint actually suggests to go to the /r/a/b/b/i/t/ directory.
 
 Now, in the directory check the page source where some creds are hidden. Use them to ssh to the machine.
 ![alice_creds](images/creds.png)
