@@ -59,6 +59,8 @@ After analysing it in Ghidra, head to main function to see c code.
 In there, the program is setting suid and sgid and then printing some statement and getting some input and then stops.
 Found the way to exploit it? Congrats! If not allow me to explain.
 
+![main_function](images/main_c.png)
+
 In the program you can see its using system() to do system commands. For first command its using full path but for second which is date is not. So, yes we can modify our path and point it to the date executable we gonna create.
 
 Create date file which will contain reverse shell. Make sure to give it shebang so it'll know where this belongs. Start listener and get shell.
