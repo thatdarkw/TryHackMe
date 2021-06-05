@@ -55,7 +55,7 @@ In the program you can see its using system() to do system commands. For first c
 
 Create date file which will contain reverse shell. Make sure to give it shebang so it'll know where this belongs. Start listener and get shell.
 
-Congrats!!! You are now hatter user.
+Congrats!!! You are now hatter user. Use the creds and then ssh directly as hatter to get stable access.
 If you ran linpeas before you may notice we can now get direct root from here. If not then go ahead and run linpeas which will highlight 2 capabilities having set as setuid. Why I didn't say this before? Cause ofcourse, only hatter can execute them.
 
 Grab the capability exploit for perl from gtfobins and use it to get root.
