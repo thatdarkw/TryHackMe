@@ -20,4 +20,4 @@ Using steghide on white_rabbit_1.jpg with no pass extracts hint.txt file which s
 
 Let's directory burst cause no idea what this hint means.
 
-````dirsearch -u http://10.10.163.161/ -e php,txt,html -x 400,401,403 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -r ```
+```dirsearch -u http://10.10.163.161/ -e php,txt,html -x 400,401,403 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -r ```
