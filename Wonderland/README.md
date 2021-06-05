@@ -17,7 +17,7 @@ port      |service
 Let's enumerate port 80.
 Nothing much on home page except some picture and words. Picture is from /img so let's check it and download them to check for steganography.
 Using steghide on white_rabbit_1.jpg with no pass extracts hint.txt file which says follow the r a b b i t.
-![steghide](/images/steghide.png)
+![steghide](images/steghide.png)
 Interesting....
 
 Let's directory burst cause no idea what this hint means.
@@ -34,13 +34,13 @@ No interesting directory after /poem/ but on /r/ we found another directory whic
 Now, dirsearch founds /r/a/b/... Interesting huh? Remember the hint. Go on like this or you already know from the hint now. I dirsearch all the way till end after then I noticed r a b b i t hint actually suggests to go to the /r/a/b/b/i/t/ directory.
 
 Now, in the directory check the page source where some creds are hidden. Use them to ssh to the machine.
-![alice_creds](/images/creds.png)
+![alice_creds](images/creds.png)
 
 Woah... We are alice user now. But still a long road remains....
 ```
 sudo -l
 ```
-![sudo -l](/images/sudo_l.png)
+![sudo -l](images/sudo_l.png)
 
 Above command reveals /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py can be run as rabbit user.
 Let's read walrus_and_the_carpenter.py . We don't have write privilege but inside this file is an import statement which imports random.
@@ -51,7 +51,7 @@ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 ```
 
 Phew... We got rabbit user but its not over yet. In rabbit user's home directory contains a root suid. We don't know what it does so let's grab it to our machine and analyse it using Ghidra. Copy it using python http server or using scp however you want.
-![teaParty](/images/teaParty.png)
+![teaParty](images/teaParty.png)
 
 After analysing it in Ghidra, head to main function to see c code.
 In there, the program is setting suid and sgid and then printing some statement and getting some input and then stops.
@@ -63,12 +63,12 @@ Create date file which will contain reverse shell. Make sure to give it shebang 
 
 Congrats!!! You are now hatter user. Use the creds and then ssh directly as hatter to get stable access.
 If you ran linpeas before you may notice we can now get direct root from here. If not then go ahead and run linpeas which will highlight 2 capabilities having set as setuid. Why I didn't say this before? Cause ofcourse, only hatter can execute them.
-![linpeas](/images/capabilities.png)
+![linpeas](images/capabilities.png)
 
 Grab the capability exploit for perl from gtfobins and use it to get root.
 ```
 perl -e 'use POSIX qw(setuid); POSIX::setuid(0); exec "/bin/sh";'
 ```
-![perl_capability](/images/perl_capability)
+![perl_capability](images/perl_capability)
 
 Congrats, root is owned now.
