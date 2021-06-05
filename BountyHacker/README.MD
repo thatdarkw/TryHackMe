@@ -1,4 +1,4 @@
-# This is a walkthrough for Bounty Hacker room on TryHackme.
+# Writeup for Bounty Hacker room on TryHackme.
 URL = https://tryhackme.com/room/cowboyhacker
 
 # Enumeration:-
