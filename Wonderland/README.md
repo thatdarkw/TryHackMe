@@ -17,7 +17,7 @@ port      |service
 Let's enumerate port 80.
 Nothing much on home page except some picture and words. Picture is from /img so let's check it and download them to check for steganography.
 Using steghide on white_rabbit_1.jpg with no pass extracts hint.txt file which says follow the r a b b i t.
-!steghide(/images/steghide.png)
+![steghide](/images/steghide.png)
 Interesting....
 
 Let's directory burst cause no idea what this hint means.
